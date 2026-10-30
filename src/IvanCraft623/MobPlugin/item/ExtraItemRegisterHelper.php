@@ -34,19 +34,19 @@ use pocketmine\world\format\io\GlobalItemDataHandlers;
 final class ExtraItemRegisterHelper{
 
 	public static function init() : void{
-		self::registerItems();
+		//self::registerItems();
 
 		Server::getInstance()->getAsyncPool()->addWorkerStartHook(function(int $worker) : void{
 			Server::getInstance()->getAsyncPool()->submitTaskToWorker(new class extends AsyncTask{
 				public function onRun() : void{
-					ExtraItemRegisterHelper::registerItems();
+					//ExtraItemRegisterHelper::registerItems();
 				}
 			}, $worker);
 		});
 	}
 
 	public static function registerItems() : void{
-		self::registerSimpleItem(ItemTypeNames::ENDERMITE_SPAWN_EGG, ExtraVanillaItems::ENDERMITE_SPAWN_EGG(), ["endermite_spawn_egg"]);
+		//self::registerSimpleItem(ItemTypeNames::ENDERMITE_SPAWN_EGG, ExtraVanillaItems::ENDERMITE_SPAWN_EGG(), ["endermite_spawn_egg"]);
 		self::registerSimpleItem(ItemTypeNames::MOOSHROOM_SPAWN_EGG, ExtraVanillaItems::MOOSHROOM_SPAWN_EGG(), ["mooshroom_spawn_egg"]);
 		self::registerSimpleItem(ItemTypeNames::COW_SPAWN_EGG, ExtraVanillaItems::COW_SPAWN_EGG(), ["cow_spawn_egg"]);
 		self::registerSimpleItem(ItemTypeNames::SHEEP_SPAWN_EGG, ExtraVanillaItems::SHEEP_SPAWN_EGG(), ["sheep_spawn_egg"]);
